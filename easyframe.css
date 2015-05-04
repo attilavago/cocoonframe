@@ -1,0 +1,70 @@
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  /* Removes padding behaviour on widths */
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+ 
+/* Attribute selector */
+[class*='box-'] {
+  float: left;
+  padding: 10px;
+}
+ 
+/* Floats last ".box-" to the right */
+[class*='box-']:last-of-type {
+  padding-right: 10px;
+  float: right;
+}
+ 
+/* Clearfix */
+.frame:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Main Widths */
+.box-1  {width: 100%;}
+.box-2  {width: 50%;}
+.box-3  {width: 33.33%;}
+.box-4  {width: 25%;}
+.box-5  {width: 20%;}
+.box-6  {width: 16.6666666667%;}
+.box-7  {width: 14.2857142857%;}
+.box-8  {width: 12.5%;}
+.box-9  {width: 11.1111111111%;}
+.box-10 {width: 10%;}
+.box-11 {width: 9.09090909091%;}
+.box-12 {width: 8.33%;}
+
+/* tablets h-oriented to desktop */
+@media (min-width: 800px) and (max-width: 1100px) {
+.box-2,.box-7 {
+    width: 100%;}
+.box-4,.box-8,.box-10,.box-12 {
+    width: 50%;}
+}
+
+/* tablets */
+@media (max-width: 800px) {
+.box-4,.box-6,.box-8,.box-10,.box-12 {width: 50%;}
+.box-1,.box-2,.box-3,.box-5,.box-7,.box-9,.box-11 {width: 100%;}
+}
+
+/* mobiles - everything 100% */
+@media (max-width: 480px) {
+.box-1,.box-2,.box-3,.box-4,.box-5,.box-6,.box-7,.box-8,.box-9,.box-10,.box-11,.box-12 {
+    width: 100%;
+}
+
+/* this wee bit makes images responsive, copy this into your own stylesheet */
+.responsive {
+  max-width:100%;
+  height:auto;
+}
+
